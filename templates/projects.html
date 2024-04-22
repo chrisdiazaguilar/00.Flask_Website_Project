@@ -1,0 +1,28 @@
+ <section id="projects" class="all-projects-container">
+        <div class="section-square"></div>
+        <h2>My Projects</h2>
+        {% for project in projects %}
+            <article class="project-container">
+              <div class="project-img-container">
+                <div class="project-img">
+                   <img src="{{ project.image }}" alt ="{{project.name}}">
+                </div>
+              </div>
+              <div class="project-text-container">
+                <h3>{{ project.name }}</h3>
+                <div class="project-techs">
+                    {% for tech in project.tech %}
+                  <span>{{ tech }}</span>
+                   {% endfor %}
+                </div>
+                <p class="body-text">
+                    {{ project.description }}
+                </p>
+                <div class="project-links">
+                  <a href="{{ project.live }}" class="btn">Click me for Enlarge!</a>
+                  <!-- <a href="{{ project.repo }}" class="btn">GitHub Repo</a> -->
+                </div>
+              </div>
+            </article>
+     {% endfor %}
+      </section>
